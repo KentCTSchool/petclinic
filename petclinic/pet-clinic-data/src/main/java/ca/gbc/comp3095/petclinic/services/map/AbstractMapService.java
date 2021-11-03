@@ -4,7 +4,7 @@ import ca.gbc.comp3095.petclinic.model.BaseEntity;
 
 import java.util.*;
 
-public class AbstractMapService<T extends BaseEntity, ID extends Long>{
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long>{
     protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll(){
