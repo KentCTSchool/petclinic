@@ -1,12 +1,13 @@
 package ca.gbc.comp3095.petclinic.services.map;
 
 import ca.gbc.comp3095.petclinic.model.Owner;
-import ca.gbc.comp3095.petclinic.model.Pet;
-import ca.gbc.comp3095.petclinic.services.CrudService;
+import ca.gbc.comp3095.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -20,7 +21,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
@@ -32,5 +33,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastname(String lastname) {
+        return null;
     }
 }
