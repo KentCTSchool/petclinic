@@ -4,7 +4,7 @@ import ca.gbc.comp3095.petclinic.model.Owner;
 
 import java.util.Set;
 
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner, Long>{
 
     Owner findByLastname(String lastname);
     Owner findById(Long id);
